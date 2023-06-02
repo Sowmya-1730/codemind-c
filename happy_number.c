@@ -1,32 +1,22 @@
-#include <stdio.h>    
-int isHappyNumber(int num)
-{    
-    int rem = 0, sum = 0;    
-    while(num > 0)
-    {    
-        rem = num%10;    
-        sum = sum + (rem*rem);    
-        num = num/10;    
-    }    
-    return sum;    
-}    
-        
-int main()    
-{    
+#include<stdio.h>
+int main()
+{
     int num;
     scanf("%d",&num);
-    int result = num;    
-        
-    while(result != 1 && result != 4){    
-        result = isHappyNumber(result);    
-    }    
-        
-    //Happy number always ends with 1    
-    if(result == 1)    
-        printf("True");    
-    //Unhappy number ends in a cycle of repeating numbers which contains 4    
-    else if(result == 4)    
-        printf("False");     
-     
-    return 0;    
-}    
+    int sum=0,rem;
+     while(sum!=1 && sum!=4)
+     {
+    sum=0;
+    while(num!=0)
+    {
+        rem=num%10;
+        sum+=(rem*rem);
+        num/=10;
+    }
+    num=sum;
+    }
+   if(sum==1)
+    printf("True");
+   else
+    printf("False");
+}
